@@ -1,0 +1,50 @@
+<!--pages/component/user/help/help.wxml-->
+<view style="width: 100%;">
+
+<scroll-view scroll-y="{{true}}" class="bg">
+    <view>一、参与投票</view>
+    <view>
+        <text decode>&nbsp;&nbsp;&nbsp;&nbsp;参与投票有三种方式：\n</text>
+     <text> 1、在大厅中查看感兴趣的投票进行操作，有些需要输入密码，注意，大厅中只展示<text style="color: rgb(138, 132, 223);">公开</text>的投票；\n</text>
+      <text>2、在搜索框通过<text style="color: rgb(138, 132, 223);">标题</text>或者<text style="color: rgb(138, 132, 223);">参与码</text>查找特定投票，此种方式可查询出未公开的投票；\n</text>
+      <text>3、通过其他用户的<text style="color: rgb(138, 132, 223);">分享</text>进行投票。\n</text>
+      <text decode style="color: rgb(238, 159, 153);">&nbsp;&nbsp;&nbsp;&nbsp;提示：若违规次数过多可能会被禁止参与投票</text>
+    </view>
+
+    <view style="margin-top: 10px;">二、发布投票</view>
+    <view>
+        <text decode>&nbsp;&nbsp;&nbsp;&nbsp;在创建页面可编辑新的投票，需注意一下几点：\n</text>
+        <text>1、标题最多100个字符，不可为空；\n</text>
+        <text>2、每个问题可设置多个选项，问题不可为空，每个投票可设置多个问题，必须指定最多可选择数，且不超过选项数；\n</text>
+        <text>3、选项不可重复且不可为空，当前选项填写完毕后会自动生成下一个输入框，若选项设置完毕可无需理会新的空白输入框；\n</text>
+        <text>4、每个投票可设置参与密码，若有则参与者需输入密码方可进行操作；可设置最大参与人数，到达时投票即停止；设置匿名后不展示发布者名称；设置不公开后不在大厅展示，只可通过搜索查询到，切记；\n</text>
+        <text>5、投票一经确认提交即等待审核，不可再次修改，<text style="color: rgb(138, 132, 223);">每天最多发布3次投票，</text>次日凌晨3点恢复次数（可能会有延迟，属于正常现象），请谨慎操作。<text style="color: rgb(138, 132, 223);">每个投票有效期为1-72h之间。</text>\n</text>
+        <text decode style="color: rgb(238, 159, 153);">&nbsp;&nbsp;&nbsp;&nbsp;提示：若违规次数过多可能会被禁止发布投票</text>
+    </view>
+
+    <view style="margin-top: 10px;">三、查看投票</view>
+    <view>
+        <text>1、创建的投票提交后请耐心等待审核，一般在一小时之内可得到回复（若未回复也没办法，没运维，管理员随缘上线），若通过审核会通知发布者，且提供一个参与码（四位字母+数字，不保证唯一，但不影响操作），发布者可将其分享，（大多数页面都可以分享例如本页面，点击右上角那三个点）计时从此时开始；\n</text>
+        <text>2、在投票进行期间，参与者只可查看自己所选项，发布者可随时查看参与情况，若投票进行期间发现问题，投票可能会被封禁，因此请请严格遵守网络和谐规范；投票到达最大人数时或者到达最大时间时会停止，用户和发布者都可收到结束消息并查看最终结果；\n</text>
+        <text>3、所有用户可随时查看历史发布投票和历史参与投票，管理者绝对不会影响每一个投票最终结果。</text>
+    </view>
+
+    <view style="margin-top: 10px;">四、用户反馈</view>
+    <view>
+        <text decode>&nbsp;&nbsp;&nbsp;&nbsp;若您在使用过程中遇到问题，例如界面混乱、功能出错，显示有误等问题，请提交反馈详细描述问题，或者将问题发送到邮箱：3300358443@qq.com，发邮箱最好是视频或者图文。管理员会及时解决并回复。</text>
+    </view>
+
+    <view style="margin-top: 10px;">五、隐私政策</view>
+    <view>
+        <text decode>&nbsp;&nbsp;&nbsp;&nbsp;本应用只会获取您的用户名和头像，请放心使用，为保证相关消息及时送达，请确保您授予本应用订阅消息权限。\n &nbsp;&nbsp;&nbsp;&nbsp;注意：ios7.0.6和android7.0.7及以上的版本才可正常使用本应用。\n</text>
+        <text decode style="color: #f00;">&nbsp;&nbsp;&nbsp;&nbsp;本应用不会主动更新您的用户名和头像，如需及时更新，请将本小程序删除后重新进入，重新登录即可完成更新。如果您发现有数据丢失的情况请及时联系管理员并提供您的详细信息。另外，头像加载慢是正常的。PC端微信可能会有问题，目前保证手机端正常就好。</text>
+
+    </view>
+
+
+</scroll-view>
+
+
+
+
+</view>

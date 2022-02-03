@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
+    "mp-slideview": "weui-miniprogram/slideview/slideview"
+  }
+}

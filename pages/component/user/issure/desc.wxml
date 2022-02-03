@@ -1,0 +1,38 @@
+<!--pages/issure/desc.wxml-->
+
+
+<view>
+
+    <!-- 标题 -->
+    <view class="title">
+        {{formData.title}}
+    </view>
+
+    <!-- 选项 -->
+    <view style="width: 100%;">
+
+        <view class="page-section" class="items" wx:for="{{formData.items}}" wx:key="id" wx:for-index="index">
+            <view class="page-section-title">{{item.question}}(最多选择{{item.optional}}项)</view>
+            <view class="weui-cells weui-cells_after-title">
+                <!-- 单选 -->
+                <radio-group wx:if="{{item.optional==1&&item.optional}}" data-index="{{index}}" bindchange="radioChange">
+                    <label class="weui-cell weui-check__label" wx:for="{{item.item}}" wx:for-item="it" wx:key="_id">
+                        <view class="weui-cell__hd">
+                            <radio value="{{it.ans}}" checked="{{it.checked}}" disabled="{{true}}"/>
+                        </view>
+                        <view class="weui-cell__bd">{{it.ans}}</view>
+                    </label>
+                </radio-group>
+                <!-- 多选 -->
+                <checkbox-group wx:else bindchange="checkboxChange" data-index="{{index}}">
+                    <label class="weui-cell weui-check__label" wx:for="{{item.item}}" wx:for-item="it" wx:key="_id">
+                        <view class="weui-cell__hd">
+                            <checkbox value="{{it.ans}}" checked="{{it.checked===true}}" disabled="{{true}}"/>
+                        </view>
+                        <view class="weui-cell__bd">{{it.ans}}</view>
+                    </label>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+</view>

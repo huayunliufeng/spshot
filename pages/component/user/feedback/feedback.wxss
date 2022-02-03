@@ -1,0 +1,16 @@
+/* pages/component/user/feedback/feedback.wxss */
+.desc{
+    padding: 8px;
+    border-radius: 20px;
+    width: 92%;
+    background-color: #fff;
+    margin: 10px auto;
+}
+
+.title{
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: 96%;
+    margin: 0 auto;
+    background-color: #fff;
+}

@@ -1,0 +1,29 @@
+<!--pages/component/user/feedback/feedback.wxml-->
+
+<mp-toptips msg="{{message}}" type="{{type}}" show="{{showTopTips}}" delay="{{2000}}"></mp-toptips>
+<view style="width: 96%;margin: 0 auto;height: 100vh;background-color: rgb(240, 245, 245);">
+
+    <view style="height: 10px;"></view>
+    <!-- 标题 -->
+    <view class="weui-cells weui-cells_after-title title">
+        <view class="weui-cell weui-cell_input">
+            <input class="weui-input" type="text" value="{{title}}" placeholder="标题" maxlength="100" bindinput="title" />
+        </view>
+    </view>
+
+    <!-- 详细内容 -->
+    <view class="desc">
+        <textarea value="{{details}}" placeholder="请详细描述您遇到的问题，我们会在24小时内回复您，请留意系统消息，最多输入255个字符。" style="width: 100%;" maxlength="255" bindinput="details"></textarea>
+    </view>
+
+    <!-- 提交 -->
+    <view>
+        <button type="primary" style="width: 50%;margin: 10px auto;" bindtap="submit">确认提交</button>
+    </view>
+
+    <!-- 确认弹窗 -->
+    <mp-dialog title="提示" mask-closable="{{false}}" show="{{dialog}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>确认提交吗</view>
+    </mp-dialog>
+</view>
+

@@ -1,0 +1,38 @@
+/* pages/issure/issure.wxss */
+
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.searchbar-result:before{
+    display: none;
+}
+
+
+.ison{
+    background-color: rgb(223, 181, 199);
+}
+
+.isno{
+    background-color: rgb(250, 242, 242);
+}
+
+.pass{
+    width: 49%;
+    text-align: center;
+    float: left;
+    height: 6vh;
+    line-height: 6vh;
+    border-radius: 15px;
+}
+
+.verify{
+    width: 49%;
+    text-align: center;
+    float: right;
+    height: 6vh;
+    line-height: 6vh;
+    border-radius: 15px;
+}

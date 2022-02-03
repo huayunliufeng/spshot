@@ -1,0 +1,32 @@
+<!--pages/component/user/sysMessage/sysMessage.wxml-->
+<view style="background-color: rgb(236, 245, 245);">
+
+<view class="weui-panel__bd">
+    <view style="padding: 16px 16px 0 16px;" class="weui-media-box_text" wx:for="{{dealList}}" wx:key="id">
+        <view class="list" data-id="{{item.id}}" bindtap="desc">
+            <mp-badge wx:if="{{item.state!==1}}" style="float: right;" />
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}
+            </view>
+            <view class="weui-media-box__desc">{{item.result}}</view>
+            <view class="weui-media-box__info" style="float: right;">
+                <view class="weui-media-box__info__meta">{{item.adminname}}</view>
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.dealtime}}</view>
+            </view>
+        </view>
+
+    </view>
+</view>
+
+<!-- 底部加载 -->
+<view class="page__bd">
+  <view wx:if="{{showLoding}}" class="weui-loadmore" aria-role="alert">
+    <text aria-hidden="true" aria-label="加载中" class="weui-primary-loading" aria-role="img">
+    </text>
+    <text class="weui-loadmore__tips">正在加载</text>
+  </view>
+  <view wx:if="{{showMax}}" class="weui-loadmore weui-loadmore_line">
+    <text class="weui-loadmore__tips" style="background-color:rgb(236, 245, 245) ;">到底啦</text>
+  </view>
+</view>
+
+</view>

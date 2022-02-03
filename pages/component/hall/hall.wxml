@@ -1,0 +1,62 @@
+<!--pages/component/hall/hall.wxml-->
+<mp-toptips msg="{{message}}" type="{{type}}" show="{{showTopTips}}" delay="{{3000}}"></mp-toptips>
+<view class="container">
+  <!-- 推广图片 -->
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+      <block wx:for="{{images}}" wx:for-item="item" wx:key="*this" wx:for-index="index">
+        <swiper-item data-index="{{index}}" bindtap="copy">
+          <image mode="scaleToFill" src="http://hylf.club:8090/images/{{item.img}}" style="height: 150px;width: 100%;"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 搜索 -->
+    <view class="page__bd" style="height: 10vh;">
+        <mp-searchbar bindblur="search" placeholder="标题 / 参与码"></mp-searchbar>
+    </view>
+  </view>
+
+  <!-- 列表 -->
+  <view class="weui-panel" style="width: 100%;">
+    <view class="weui-panel__hd" style="text-align: center;">投票列表({{pagination.total}})</view>
+    <view class="weui-panel__bd" style="border-bottom: 1px solid #918b8c;height: 110px;" wx:for="{{tableData}}" wx:for-item="item" wx:key="*this">
+      <navigator url="desc?id={{item.id}}">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+          <view class="weui-media-box__desc">当前数据：{{item.currperson}} /
+            <text>{{item.maxperson == -1?'不限':item.maxperson}}</text>
+            <text style="margin-left: 20px;">有效时间：{{item.effecttime}}h</text>
+            <text wx:if="{{item.isanony!=='1'}}" style="float: right;">{{item.username}}</text>
+            <text wx:else="" style="float: right;">匿名</text>
+          </view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">发布时间：{{item.accepttime}}</view>
+            <text style="float: right;font-size:14px">{{item.partcode}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+
+
+    <!-- 底部加载 -->
+    <view class="page__bd">
+      <view wx:if="{{showLoding}}" class="weui-loadmore" aria-role="alert">
+        <text aria-hidden="true" aria-label="加载中" class="weui-primary-loading" aria-role="img">
+          <text class="weui-primary-loading__dot"></text>
+        </text>
+        <text class="weui-loadmore__tips">正在加载</text>
+      </view>
+      <view wx:if="{{showMax}}" class="weui-loadmore weui-loadmore_line">
+        <text class="weui-loadmore__tips">到底啦</text>
+      </view>
+    </view>
+
+
+
+  </view>
+
+
+
+
+</view>

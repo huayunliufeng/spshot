@@ -1,0 +1,25 @@
+<!--pages/issure/ispass.wxml-->
+
+<view>
+
+    <!-- 标题 -->
+    <view class="title">
+        {{formData.title}}
+    </view>
+
+    <!-- 选项 -->
+    <view style="width: 96%;margin: 0 auto;">
+
+        <view class="page-section" class="items" wx:for="{{formData.items}}" wx:key="id" wx:for-index="index">
+            <view style="margin-bottom: 20px;">
+                <view class="page-section-title">{{item.question}}(最多选择{{item.optional}}项)</view>
+                <view class="progress-box" wx:for="{{item.item}}" wx:for-item="it" wx:for-index="ind" wx:key="*this" style="margin: 10px 0;">
+                    <view style="color: rgb(132, 138, 138);font-size: 12px;">{{it.ans}}
+                        <text style="float: right;">（当前人数：{{it.num}}）</text></view>
+                    <progress percent="{{it.num/item.max*100}}" stroke-width="5" active="{{true}}"/>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

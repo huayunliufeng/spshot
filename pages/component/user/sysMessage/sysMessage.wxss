@@ -1,0 +1,9 @@
+/* pages/component/user/sysMessage/sysMessage.wxss */
+.list{
+
+    height: 80px;
+    padding: 16px;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}

@@ -1,0 +1,11 @@
+/* pages/component/user/help/help.wxss */
+.bg{
+    height: 96vh;
+    width: 94%;
+    margin: 1vh auto;
+    border-radius: 20px;
+    background-color: rgb(247, 240, 244);
+    padding: 1vh;
+    font-size: 14px;
+    line-height: 26px;
+}

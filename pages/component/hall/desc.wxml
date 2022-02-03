@@ -1,0 +1,58 @@
+<!--pages/component/hall/desc.wxml-->
+<!-- 消息提示 -->
+<mp-toptips msg="{{message}}" type="{{type}}" show="{{showTopTips}}" delay="{{3000}}"></mp-toptips>
+
+<mp-dialog title="提示" mask-closable="{{false}}" show="{{dialog3}}" bindbuttontap="tapDialogButton3" buttons="{{buttons2}}">
+  <view>您暂时不可参与投票！</view>
+</mp-dialog>
+
+<mp-dialog title="请输入参与密码" mask-closable="{{false}}" show="{{dialog4}}" bindbuttontap="tapDialogButton4" buttons="{{buttons2}}">
+  <input maxlength="4" type="text" model:value="{{inputPass}}" style="border: 1px solid #000;"/>
+</mp-dialog>
+
+<view>
+    <!-- 标题 -->
+    <view class="title">
+        {{formData.title}}
+    </view>
+
+    <!-- 选项 -->
+    <view style="width: 100%;">
+
+        <view class="page-section" class="items" wx:for="{{formData.items}}" wx:key="id" wx:for-index="index">
+            <view class="page-section-title">{{item.question}}(最多选择{{item.optional}}项)</view>
+            <view class="weui-cells weui-cells_after-title">
+                <!-- 单选 -->
+                <radio-group wx:if="{{item.optional==1&&item.optional}}" data-index="{{index}}" bindchange="radioChange">
+                    <label class="weui-cell weui-check__label" wx:for="{{item.item}}" wx:for-item="it" wx:key="_id">
+                        <view class="weui-cell__hd">
+                            <radio value="{{it.ans}}" checked="{{it.checked}}" disabled="{{it.dis===true}}"/>
+                        </view>
+                        <view class="weui-cell__bd">{{it.ans}}</view>
+                    </label>
+                </radio-group>
+                <!-- 多选 -->
+                <checkbox-group wx:else bindchange="checkboxChange" data-index="{{index}}">
+                    <label class="weui-cell weui-check__label" wx:for="{{item.item}}" wx:for-item="it" wx:key="_id">
+                        <view class="weui-cell__hd">
+                            <checkbox value="{{it.ans}}" checked="{{it.checked}}" disabled="{{it.dis===true}}"/>
+                        </view>
+                        <view class="weui-cell__bd">{{it.ans}}</view>
+                    </label>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+
+    <!-- 提交 -->
+    <view class="btn-area" id="buttonContainer">
+        <button type="primary" disabled="{{buttDis}}" style="width: 98%;" bindtap="submit">提交</button>
+    </view>
+
+    <!-- 确认弹窗 -->
+    <mp-dialog title="提示" mask-closable="{{false}}" show="{{dialog}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>确认提交吗？确认后不可更改</view>
+    </mp-dialog>
+
+
+</view>

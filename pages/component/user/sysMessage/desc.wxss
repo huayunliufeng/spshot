@@ -1,0 +1,46 @@
+/* pages/component/user/sysMessage/desc.wxss */
+.title{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(251, 253, 249);
+    padding: 0 10px;
+    overflow: scroll;
+}
+
+.desc{
+    border: 1px dashed rgb(223, 149, 120);
+    background-color: rgb(241, 238, 236);
+    margin: 10px auto;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.foot{
+    float: right;
+    height: 30px;
+}
+
+.t1{
+    padding: 5px;
+    background-color: rgb(190, 205, 228);
+    border-radius: 10px;
+    color: rgb(214, 151, 151);
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.t2{
+    margin-left: 10px;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    background-color: rgb(215, 233, 217);
+    border-radius: 10px;
+    color: rgb(88, 86, 86);
+}

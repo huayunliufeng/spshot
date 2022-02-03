@@ -1,0 +1,105 @@
+<!--pages/issure/issure.wxml-->
+<view style="width: 98%;margin: 0 auto;">
+
+    <!-- 搜索 -->
+    <view class="page__bd" style="height: 10vh;">
+        <mp-searchbar bindblur="search" placeholder="标题"></mp-searchbar>
+    </view>
+
+    <!-- 内容 -->
+    <view>
+        <!-- 待审核 -->
+        <scroll-view scroll-y="{{true}}" wx:if="{{show===0}}" style="height: 82vh;border-radius: 15px;width: 98%;margin: 0 auto;background-color: rgb(248, 250, 243);" lower-threshold="50" bindscrolltolower="loadData">
+            <!-- 列表 -->
+            <view class="weui-panel" style="margin: 0;width: 100%;">
+                <view class="weui-panel__bd" style="border-bottom: 1px solid #918b8c;height: 110px;" wx:for="{{tableData}}" wx:for-item="item" wx:key="id">
+                    <navigator url="desc?id={{item.id}}">
+                        <view class="weui-media-box weui-media-box_text">
+                            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+                            <view class="weui-media-box__desc">当前数据：{{item.currperson}} /
+                                <text>{{item.maxperson == -1?'不限':item.maxperson}}</text>
+                                <text style="margin-left: 20px;">有效时间：{{item.effecttime}}h</text>
+                                <text style="float: right;">{{item.isanony==='1'?'匿名':item.username}}</text>
+                            </view>
+                            <view class="weui-media-box__info">
+                                <view class="weui-media-box__info__meta">提交时间：{{item.createtime}}</view>
+                                <view class="weui-media-box__info__meta">{{item.ispublic==='0'?'不公开':'公开'}}</view>
+                                <view class="weui-media-box__info__meta" style="float: right;">等待审核</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+
+            <!-- 底部加载 -->
+            <view class="page__bd">
+                <view wx:if="{{showLoding}}" class="weui-loadmore" aria-role="alert">
+                    <text aria-hidden="true" aria-label="加载中" class="weui-primary-loading" aria-role="img">
+                        <text class="weui-primary-loading__dot"></text>
+                    </text>
+                    <text class="weui-loadmore__tips">正在加载</text>
+                </view>
+                <view wx:if="{{showMax}}" class="weui-loadmore weui-loadmore_line">
+                    <text class="weui-loadmore__tips">到底啦</text>
+                </view>
+            </view>
+        </scroll-view>
+
+        <!-- 已通过 -->
+        <scroll-view scroll-y="{{true}}" wx:else style="height: 82vh;border-radius: 15px;width: 98%;margin: 0 auto;background-color: rgb(248, 250, 243);" lower-threshold="50" bindscrolltolower="loadData">
+            <!-- 列表 -->
+            <view class="weui-panel" style="margin: 0;width: 100%;">
+                <view class="weui-panel__bd" style="border-bottom: 1px solid #918b8c;height: 110px;" wx:for="{{tableData}}" wx:for-item="item" wx:key="id">
+                    <navigator url="ispass?id={{item.id}}">
+                        <view class="weui-media-box weui-media-box_text" >
+                            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+                            <view class="weui-media-box__desc">当前数据：{{item.currperson}} /
+                                <text>{{item.maxperson == -1?'不限':item.maxperson}}</text>
+                                <text style="margin-left: 20px;">有效时间：{{item.effecttime}}h</text>
+                                <text style="float: right;">{{item.isanony==='1'?'匿名':item.username}}</text>
+                            </view>
+                            <view class="weui-media-box__info">
+                                <view class="weui-media-box__info__meta">通过时间：{{item.accepttime}}</view>
+                                <view class="weui-media-box__info__meta">{{item.ispublic==='0'?'不公开':'公开'}}</view>
+                                <view class="weui-media-box__info__meta" style="float: right;">{{item.partcode}}</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+
+            <!-- 底部加载 -->
+            <view class="page__bd">
+                <view wx:if="{{showLoding}}" class="weui-loadmore" aria-role="alert">
+                    <text aria-hidden="true" aria-label="加载中" class="weui-primary-loading" aria-role="img">
+                        <text class="weui-primary-loading__dot"></text>
+                    </text>
+                    <text class="weui-loadmore__tips">正在加载</text>
+                </view>
+                <view wx:if="{{showMax}}" class="weui-loadmore weui-loadmore_line">
+                    <text class="weui-loadmore__tips">到底啦</text>
+                </view>
+            </view>
+
+        </scroll-view>
+
+    </view>
+
+
+
+
+    <!-- foot -->
+    <view style="margin: 1vh 0;">
+        <view class="pass {{style1}}" bindtap="verify">
+            待审核({{pagination.total1}})
+        </view>
+        <view class="verify {{style2}}" bindtap="pass">
+            已通过({{pagination.total2}})
+        </view>
+
+    </view>
+
+
+
+
+</view>

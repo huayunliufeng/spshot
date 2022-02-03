@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "我参与的",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

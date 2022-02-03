@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-badge": "weui-miniprogram/badge/badge"
+  }
+}

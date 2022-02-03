@@ -1,0 +1,50 @@
+{
+    "pages": [
+        "pages/component/hall/hall",
+        "pages/component/create/create",
+        "pages/component/user/user",
+        "pages/component/hall/desc",
+        "pages/component/user/part/part",
+        "pages/component/user/feedback/feedback",
+        "pages/component/user/issure/issure",
+        "pages/component/user/issure/desc",
+        "pages/component/user/issure/ispass",
+        "pages/component/user/sysMessage/sysMessage",
+        "pages/component/user/sysMessage/desc",
+        "pages/component/user/help/help",
+        "pages/login/login"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f7b0b0",
+        "navigationBarTitleText": "请投意合",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "color": "#000",
+        "selectedColor": "#e286aa",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/component/hall/hall",
+                "text": "大厅",
+                "iconPath": "./image/icon_hall.png",
+                "selectedIconPath": "./image/icon_hall_HL.png"
+            },
+            {
+                "pagePath": "pages/component/create/create",
+                "text": "创建",
+                "iconPath": "./image/icon_create.png",
+                "selectedIconPath": "./image/icon_create_HL.png"
+            },
+            {
+                "pagePath": "pages/component/user/user",
+                "text": "我的",
+                "iconPath": "./image/icon_user.png",
+                "selectedIconPath": "./image/icon_user_HL.png"
+            }
+        ]
+    }
+}

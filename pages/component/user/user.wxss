@@ -1,0 +1,74 @@
+/* pages/component/user/user.wxss */
+.userinfo-avatar {
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .t1{
+    height: 24px;
+    font-size: 14px;
+    background-color: rgb(183, 202, 230);
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    color: rgb(202, 101, 101);
+  }
+  
+  .t2_1{
+    display: inline-block;
+    width: 70%;
+    text-align: center;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .t2_1_1{
+    background-color: rgb(156, 231, 206);
+  }
+  
+  .t2_1_2{
+    background-color: rgb(212, 156, 226);
+  }
+  
+  .t2_1_3{
+    background-color: rgb(231, 225, 171);
+  }
+  
+  .t2_1_4{
+    background-color: rgb(224, 140, 140);
+  }
+  
+  
+  .t2_2{
+    text-align: center;
+    float: right;
+    background-color: rgb(182, 209, 160);
+    width: 20%;
+    margin-left: 10px;
+    border-radius: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: blue;
+  }
+  
+  .t3{
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(189, 167, 152);
+    margin-bottom: 6px;
+    font-family: monospace;
+    color: rgb(255, 255, 255);
+  }
+  
+  .t4{
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(177, 228, 180);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(102, 60, 218);
+  }

@@ -1,0 +1,16 @@
+<!--pages/component/user/sysMessage/desc.wxml-->
+<view style="width: 94%;margin: 0 auto;">
+    <!-- 标题 -->
+    <view class="title">
+        {{formData.title}}
+    </view>
+    <!-- 内容 -->
+    <view class="desc">
+        <textarea style="width: 100%;" disabled="{{true}}" value="{{formData.result}}"/>       
+    </view>
+    <!-- 管理员和时间 -->
+    <view class="foot">
+        <text class="t1">{{formData.adminname}}</text>
+        <text class="t2">{{formData.dealtime}}</text>
+    </view>
+</view>

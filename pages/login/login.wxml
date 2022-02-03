@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view>
+
+    <!-- logo -->
+    <view class="logo">
+    <view style="width: 150px;height: 150px;margin: 100px auto 0;">
+        <image class="img" src="http://hylf.club:8090/images/spshot.png"></image>
+    </view>
+       
+    </view>
+
+    <view style="width: 100%;text-align: center;">
+        请投意合申请获取您的<text style="color: rgb(134, 185, 230);">用户名</text>和<text style="color: rgb(148, 190, 226);">头像</text>
+    </view>
+    <!-- 登录按钮 -->
+    <view>
+        <button type="primary" bindtap="login">登录</button>
+    </view>
+
+
+</view>

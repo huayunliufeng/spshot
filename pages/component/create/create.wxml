@@ -1,0 +1,92 @@
+<!--pages/component/create/create.wxml-->
+<!-- 消息提示 -->
+<mp-toptips msg="{{message}}" type="{{type}}" show="{{showTopTips}}" delay="{{3000}}"></mp-toptips>
+
+<mp-dialog title="提示" mask-closable="{{false}}" show="{{dialog3}}" bindbuttontap="tapDialogButton3" buttons="{{buttons}}">
+    <view>{{text}}</view>
+</mp-dialog>
+
+<view style="background-color: rgb(247,247,247);height: 100%;">
+
+    <view class="title">发布投票
+    </view>
+
+    <!-- 标题 -->
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <input class="weui-input" type="text" value="{{title}}" placeholder="标题" maxlength="100" bindblur="title" />
+        </view>
+    </view>
+
+    <!-- 问题列表 -->
+    <view class="ques">
+        <!-- 列表 -->
+        <view class="list" wx:for="{{quesList}}" wx:key="*this" wx:for-index="index">
+            <!-- 问题 -->
+            <mp-slideview data-index="{{index}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+                <view class="weui-cells weui-cells_after-title" class="qu">
+                    <view class="weui-cell weui-cell_input">
+                        <input class="weui-input" type="text" data-index="{{index}}" placeholder="问题（左滑可删除，下同，这一行也要填）" maxlength="100" value="{{item.question}}" bindblur="question" />
+                    </view>
+                </view>
+            </mp-slideview>
+            <!-- 选项 -->
+            <view class="weui-cells weui-cells_after-title" style="margin-top: 0;" wx:key="*this" wx:for="{{item.item}}" wx:for-item="it" wx:for-index="ind">
+                <mp-slideview data-index="{{index}}" data-ind="{{ind}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTapAns">
+                    <view class="weui-cell weui-cell_input">
+                        <input class="weui-input" type="text" data-index="{{index}}" data-ind="{{ind}}" placeholder="{{it.key}}" value="{{it.ans}}" maxlength="100" bindblur="nextAns" />
+                    </view>
+                </mp-slideview>
+            </view>
+            <!-- 最多可选 -->
+            <view style="height: 30px;width: 100%;line-height: 30px;margin-top: 10px;">
+                <text style="width: 22%;margin-left: 3%;float: left;">最多可选</text>
+                <input style="float: left;width: 70%;background-color: #fff;height: 30px;text-align: center;" data-index="{{index}}" type="number" value="{{item.optional}}" bindblur="optional" placeholder="小于等于选项数" />
+            </view>
+        </view>
+    </view>
+
+    <!-- 额外选项 -->
+    <view class="other">
+        <!-- 是否匿名 -->
+        <mp-cell title="是否匿名" ext-class="">
+            <switch slot="footer" checked="{{isanony}}" bindchange="isanony" />
+        </mp-cell>
+        <!-- 是否公开 -->
+        <mp-cell title="是否公开" ext-class="">
+            <switch slot="footer" checked="{{ispublic}}" bindchange="ispublic" />
+        </mp-cell>
+        <!-- 参与密码 -->
+        <view class="weui-cells__title">参与密码（可为空）</view>
+        <view class="weui-cells weui-cells_after-title" style="border-radius: 15px;">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" type="text" maxlength="4" value="{{partpass}}" bindblur="formInputChangePass" />
+            </view>
+        </view>
+        <!-- 有效时间 -->
+        <view class="weui-cells__title">有效时间（1-72h）</view>
+        <view class="weui-cells weui-cells_after-title" style="border-radius: 15px;">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" type="number" maxlength="2" value="{{effecttime}}" bindblur="formInputChangeTime" />
+            </view>
+        </view>
+        <!-- 最大参与人数 -->
+        <view class="weui-cells__title">最大参与人数（-1表示不限）</view>
+        <view class="weui-cells weui-cells_after-title" style="border-radius: 15px;">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" type="number" value="{{maxperson}}" maxlength="10" bindblur="formInputChangeMax" />
+            </view>
+        </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="btn-area" id="buttonContainer">
+        <button type="primary" style="width: 98%;margin: 10px auto;" bindtap="nextQues">添加问题</button>
+        <button type="primary" style="width: 98%;" bindtap="submit">提交</button>
+    </view>
+
+</view>
+
+<!-- 确认弹窗 -->
+<mp-dialog title="提示" mask-closable="{{false}}" show="{{dialog2}}" bindbuttontap="tapDialogButton2" buttons="{{buttons2}}">
+    <view>确认提交吗？（提交后不可修改）</view>
+</mp-dialog>

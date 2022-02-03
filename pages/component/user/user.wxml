@@ -1,0 +1,58 @@
+<!--pages/component/user/user.wxml-->
+<view style="background-color: rgb(243, 244, 245);">
+
+  <view wx:if="{{!isLogin}}" style="width: 92%;height: 128px;margin: 0 auto;text-align: center;line-height: 128px;font-size: 18px;">
+    <navigator url="/pages/login/login" open-type="navigate">点击登录</navigator>
+  </view>
+
+  <view wx:else style="width: 92%;height: 128px;margin: 0 auto;">
+    <view style="margin: 0 auto;">
+      <view style="float: left;width: 28%;height:120px;margin-right: 5px;margin-top: 8px;">
+        <image class="userinfo-avatar" style="width: 100%;height: 100%;" src="{{userInfo.avatarUrl}}"></image>
+      </view>
+
+      <view style="float: left;width: 70%;">
+        <view style="margin-top: 10px;">
+          <view class="t1">
+            用户名：{{userInfo.username}}
+          </view>
+          <view style="width: 100%;height: 24px;font-size: 14px;margin: 6px 0;">
+            <text class="{{type}} t2_1">状态：{{userInfo.state==0?'正常':userInfo.state==1?'禁止参与':userInfo.state==-1?'禁止参与和发布':'禁止发布'}}</text>
+            <text class="t2_2">{{userInfo.todaynum}}</text>
+          </view>
+
+          <view class="t3">总参与：{{userInfo.totalpart}}</view>
+          <view class="t4">总发布：{{userInfo.totalissure}}</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+  <mp-cells>
+    <mp-cell link bindtap="part">
+      <view style="display: inline-block; vertical-align: middle">我参与的</view>
+    </mp-cell>
+    <mp-cell link bindtap="issure">
+      <view style="display: inline-block; vertical-align: middle">我发布的</view>
+    </mp-cell>
+    <mp-cell link bindtap="feedback">
+      <view style="display: inline-block; vertical-align: middle">用户反馈</view>
+    </mp-cell>
+    <mp-cell link bindtap="sysMessage">
+      <view style="display: inline-block; vertical-align: middle">系统消息</view>
+      <mp-badge wx:if="{{show===true}}" style="margin-left: 5px;" content="{{msgNum}}" />
+    </mp-cell>
+    <mp-cell link bindtap="help">
+      <view style="display: inline-block; vertical-align: middle">使用说明</view>
+    </mp-cell>
+  </mp-cells>
+
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <navigator url="../hall/hall" open-type="switchTab" class="weui-footer__link">返回大厅</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2021-2022 华风部落</view>
+  </view>
+</view>

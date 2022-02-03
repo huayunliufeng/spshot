@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-badge": "weui-miniprogram/badge/badge"
+  },
+  "navigationBarTitleText": "系统消息",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 0
+}
